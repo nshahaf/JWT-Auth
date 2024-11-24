@@ -1,4 +1,4 @@
-import mongoose from "mogoose"
+import mongoose from "mongoose"
 
 const userSchema = new mongoose.Schema(
     {
@@ -19,5 +19,4 @@ function capitalizeFullName(fullName) {
 }
 
 const User = mongoose.model("User", userSchema)
-console.log(capitalizeFullName("shahaf noked"))
 export default User
