@@ -7,6 +7,7 @@ import logger from './middleware/logger.js';
 
 //routes
 import authRoutes from './api/auth/auth.route.js'
+import messageRoutes from './api/message/message.route.js'
 
 dotenv.config()
 
@@ -16,6 +17,7 @@ app.use(cookieParser())
 app.use(logger)
 
 app.use("/api/auth", authRoutes)
+app.use("/api/message", messageRoutes)
 
 // Start the server and listen on a specific port
 const PORT = process.env.PORT || 3000;
