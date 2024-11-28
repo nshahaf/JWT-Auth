@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer utilities {
+    .page {
+        width: 100%;
+        min-height:100vh ;
+        margin-inline: auto;
+        padding: 60px 0px 0px 0px;
+    }
+    @media (min-width: 640px) {
+        .page {
+            max-width: 640px;
+        }
+    }
+    @media (min-width: 768px) {
+        .page {
+            max-width: 768px;
+        }
+    }
+    @media (min-width: 1024px) {
+        .page {
+            max-width: 1024px;
+        }
+    }
+    @media (min-width: 1280px) {
+        .page {
+            max-width: 1280px;
+        }
+    }
+    @media (min-width: 1536px) {
+        .page {
+            max-width: 1536px;
+        }
+    }
+  }
+  
