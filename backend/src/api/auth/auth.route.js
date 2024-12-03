@@ -8,6 +8,6 @@ router.post("/signup", signup)
 router.post("/login", login)
 router.post("/logout", logout)
 router.put("/update-image", protectRoute, updateProfileImage)
-router.get("/check-token", protectRoute, (req, res) => res.status(200).send("Token is valid"))
+router.get("/check-auth", protectRoute, (req, res) => res.status(200).send("Token is valid"))
 
 export default router

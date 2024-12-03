@@ -14,6 +14,7 @@ dotenv.config()
 
 const corsOptions = {
   origin: process.env.FRONTEND_URL, // Allow requests from this origin (the frontend's URL)
+  cradentials: true, // Enable credentials (cookies)
 };
 
 
