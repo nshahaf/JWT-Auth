@@ -1,10 +1,8 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
-import axios from "axios"
+import { useAuthStore } from "../store/authStore";
 
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 
 const SignupSchema = Yup.object().shape({
@@ -19,23 +17,10 @@ const SignupSchema = Yup.object().shape({
 
 
 export default function SignupPage() {
-  const navigate = useNavigate();
-
-
-
+  const { signup } = useAuthStore();
   async function handleSignup(values) {
-    try {
-      const response = await axios.post('http://localhost:3000/api/auth/signup', values);
-      console.log('user is signed up');
-      toast.success("User is signed up");
-
-    } catch (error) {
-      if (error.response.status === 400) navigate('/login')
-      toast.error("Something went wrong");
-      console.log(`Status: ${error.response.status} - ${error.response.statusText}, Data: ${error.response.data}`);
-    }
+    signup(values);
   }
-
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -53,7 +38,7 @@ export default function SignupPage() {
               password: '',
             }}
             validationSchema={SignupSchema}
-            onSubmit={(values) => handleSignup(values)}
+            onSubmit={async (values) => await signup(values)}
           >
             {({ errors, touched }) => (
               <Form className="space-y-6">

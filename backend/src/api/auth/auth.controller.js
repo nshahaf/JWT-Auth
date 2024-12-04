@@ -50,11 +50,11 @@ export const login = async (req, res) => {
         if (!validPassword) return res.status(400).send("Invalid credentials")
 
         generateToken(user._id, res)
-
         res.status(200).json({
             _id: user._id,
             fullName: user.fullName,
-            email: user.email
+            email: user.email,
+            profilePic: user.profilePic
         })
 
     } catch (error) {

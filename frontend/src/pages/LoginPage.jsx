@@ -15,22 +15,7 @@ const SigninSchema = Yup.object().shape({
 
 
 export default function LoginPage() {
-  const { setAuthUser } = useAuthStore()
-  const navigate = useNavigate();
-
-  async function handleSignIn(values) {
-    try {
-      const response = await axiosInstance.post('/auth/login', values); //generate jwt token if authenticated
-      if (response.status === 200) {
-        toast.success("User is logged in");
-        navigate('/')
-      }
-    } catch (error) {
-      toast.error("Something went wrong");
-      console.log(`Status: ${error.response.status} - ${error.response.statusText}, Data: ${error.response.data}`);
-    }
-  }
-
+  const { login } = useAuthStore()
 
   return (
     <>
@@ -48,7 +33,7 @@ export default function LoginPage() {
               email: '',
             }}
             validationSchema={SigninSchema}
-            onSubmit={(values) => handleSignIn(values)}
+            onSubmit={(values) => login(values)}
           >
             {({ errors, touched }) => (
 

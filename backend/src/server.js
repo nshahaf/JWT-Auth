@@ -14,7 +14,7 @@ dotenv.config()
 
 const corsOptions = {
   origin: process.env.FRONTEND_URL, // Allow requests from this origin (the frontend's URL)
-  cradentials: true, // Enable credentials (cookies)
+  credentials: true, // Allow sending cookies
 };
 
 
@@ -31,7 +31,7 @@ app.get("/api/ping", (req, res) => {
 })
 
 app.post("/api/test", (req, res) => {
-  console.log(req.body)
+  console.log("test from frontend")
   res.status(200).json(req.body);
 })
 

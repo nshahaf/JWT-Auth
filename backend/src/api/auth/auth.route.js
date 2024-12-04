@@ -6,8 +6,8 @@ const router = express.Router()
 
 router.post("/signup", signup)
 router.post("/login", login)
-router.post("/logout", logout)
-router.put("/update-image", protectRoute, updateProfileImage)
-router.get("/check-auth", protectRoute, (req, res) => res.status(200).send("Token is valid"))
+router.get("/logout", logout)
+router.put("/update-profile", protectRoute, updateProfileImage)
+router.get("/check-auth", protectRoute, (req, res) => res.status(200).send({ _id: req.user._id, email: req.user.email, fullName: req.user.fullName, profilePic: req.user.profilePic }))
 
 export default router
