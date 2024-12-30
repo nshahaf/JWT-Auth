@@ -1,9 +1,7 @@
-import { Link, useNavigate } from "react-router-dom";
-import { Formik, Field, Form } from 'formik';
-import * as Yup from 'yup';
-import axiosInstance from "../lib/axios";
-import { useAuthStore } from "../store/authStore";
-import { toast } from 'react-toastify';
+import { Link } from "react-router-dom"
+import { Formik, Field, Form } from 'formik'
+import * as Yup from 'yup'
+import { useAuthStore } from "../store/authStore"
 
 const SigninSchema = Yup.object().shape({
   password: Yup.string()
@@ -11,7 +9,7 @@ const SigninSchema = Yup.object().shape({
     .min(8, 'Too Short!')
     .max(30, 'Too Long!'),
   email: Yup.string().email('Invalid email').required('Required'),
-});
+})
 
 
 export default function LoginPage() {
@@ -22,7 +20,7 @@ export default function LoginPage() {
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 sm:px-0">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
-            Sign in to your account
+            Login to your account
           </h2>
         </div>
 

@@ -6,7 +6,7 @@ export default function ProfilePage() {
     const name = authUser ? authUser.fullName : 'John Doe'
     const email = authUser ? authUser.email : 'JohnDoe@email.com'
     const profilePic = authUser.profilePic ? authUser.profilePic : "/userAvatar.png"
-    const [selectedImage, setSelectedImage] = useState(null);
+    const [selectedImage, setSelectedImage] = useState(null)
 
 
     const handleFileUpload = async (e) => {

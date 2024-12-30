@@ -40,7 +40,7 @@ export const useAuthStore = create((set) => ({
     login: async (formData) => {
         try {
             set({ isInAuthProcess: true })
-            const response = await axiosInstance.post('/auth/login', formData); //generate jwt token if authenticated
+            const response = await axiosInstance.post('/auth/login', formData) //generate jwt token if authenticated
             if (response.status === 200) {
                 console.log(response.status, '- User is logged in')
                 toast.success("User is logged in")
@@ -48,7 +48,7 @@ export const useAuthStore = create((set) => ({
             }
         } catch (error) {
             console.log(error.response.status, error.response.data)
-            toast.error("error logging in");
+            toast.error("error logging in")
         } finally {
             set({ isInAuthProcess: false })
         }

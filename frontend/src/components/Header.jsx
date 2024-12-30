@@ -1,10 +1,10 @@
-import { NavLink } from "react-router";
-import { useState } from "react";
-import { useAuthStore } from "../store/authStore";
+import { NavLink } from "react-router"
+import { useState } from "react"
+import { useAuthStore } from "../store/authStore"
 
 export default function Header() {
   const { authUser, logout } = useAuthStore()
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
   function toggleIsOpen() {
     setIsOpen(!isOpen)
   }

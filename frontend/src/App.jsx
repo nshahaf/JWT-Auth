@@ -1,24 +1,22 @@
-import reactLogo from './assets/icons/react.svg' // ./ for src directory
-import viteLogo from '/vite.svg' // / for public directory
-import { Routes, Route, Navigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
 //pages
-import HomePage from './pages/HomePage';
-import SignupPage from './pages/SignupPage';
-import LoginPage from './pages/LoginPage';
-import SettingsPage from './pages/SettingsPage';
-import ProfilePage from './pages/ProfilePage';
-import NotFoundPage from './pages/NotFoundPage';
-import ServerErrorPage from './pages/ServerErrorPage';
+import HomePage from './pages/HomePage'
+import SignupPage from './pages/SignupPage'
+import LoginPage from './pages/LoginPage'
+import SettingsPage from './pages/SettingsPage'
+import ProfilePage from './pages/ProfilePage'
+import NotFoundPage from './pages/NotFoundPage'
+import ServerErrorPage from './pages/ServerErrorPage'
 //components
-import Header from './components/Header';
+import Header from './components/Header'
 
 //libs
-import { useAuthStore } from './store/authStore';
+import { useAuthStore } from './store/authStore'
 import { Loader } from 'lucide-react'
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
   const { authUser, checkAuth, isInAuthProcess } = useAuthStore()
@@ -27,7 +25,7 @@ function App() {
   useEffect(() => {
     checkAuth()
 
-  }, [checkAuth]);
+  }, [checkAuth])
 
 
   if (isInAuthProcess)

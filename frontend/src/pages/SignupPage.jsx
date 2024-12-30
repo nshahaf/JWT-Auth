@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import { Formik, Field, Form } from 'formik';
-import * as Yup from 'yup';
-import { useAuthStore } from "../store/authStore";
+import { Link } from "react-router-dom"
+import { Formik, Field, Form } from 'formik'
+import * as Yup from 'yup'
+import { useAuthStore } from "../store/authStore"
 
 
 
@@ -12,15 +12,11 @@ const SignupSchema = Yup.object().shape({
     .required('Required')
     .min(8, 'Too Short!')
     .max(30, 'Too Long!'),
-});
-
-
+})
 
 export default function SignupPage() {
-  const { signup } = useAuthStore();
-  async function handleSignup(values) {
-    signup(values);
-  }
+  const { signup } = useAuthStore()
+
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
