@@ -10,6 +10,8 @@ This is a project showcasing the use of JWT tokens for authentication. The proje
 - Error handling
 - State management with Zustand
 - Formik and Yup for form validation
+- Tailwind CSS for styling
+- MongoDB for storing user data
 
 ## Technologies Used
 
