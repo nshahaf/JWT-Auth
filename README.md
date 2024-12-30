@@ -2,6 +2,15 @@
 
 This is a project showcasing the use of JWT tokens for authentication. The project includes both a frontend and a backend, utilizing various technologies such as React, Tailwind CSS, bcrypt, JWT, and more.
 
+## Features
+- User authentication with JWT tokens
+- User signup, login, and logout
+- Profile picture upload using Cloudinary
+- Protected routes
+- Error handling
+- State management with Zustand
+- Formik and Yup for form validation
+
 ## Technologies Used
 
 - **Frontend:**
@@ -107,9 +116,4 @@ cd frontend
 npm run dev
 ```
 
-## Features
-- User authentication with JWT tokens
-- User signup, login, and logout
-- Profile picture upload using Cloudinary
-- Protected routes
 
