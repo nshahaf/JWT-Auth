@@ -46,9 +46,19 @@ backend/
 ├── node_modules 
 ├── src/
 │ ├── api/  
+│ │ ├── auth/
+│ │ │ ├── auth.controller.js
+│ │ │ ├── auth.route.js
+│ │ │ └── auth.service.js
 │ ├── lib/ 
-│ ├── middleware/ 
+│ │ ├── cloudinary.js
+│ │ ├── db.js
+│ │ ├── jwt.js
+│ ├── middleware/
+│ │ ├── protectedRoute.js
+│ │ ├── logger.js
 │ ├── models/ 
+│ │ ├── user.model.js
 │ ├── tests/ 
 │ ├── utils/ 
 │ └── server.js
@@ -67,8 +77,14 @@ frontend/
 │ ├── hooks/ 
 │ ├── lib/ 
 │ ├── pages/ 
+│ │ ├── HomePage.jsx 
+│ │ ├── LoginPage.jsx
+│ │ ├── SignupPage.jsx
+│ │ ├── ProfilePage.jsx
+│ │ ├── NotFoundPage.jsx
+│ │ ├── ServerErrorPage.jsx
 │ ├── store/ 
-│ ├── authStore.js 
+│ │ ├── authStore.js 
 │ ├── index.css 
 │ └── main.jsx 
 ├── index.html 
