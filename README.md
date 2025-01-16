@@ -38,6 +38,8 @@ This is a project showcasing the use of JWT tokens for authentication. The proje
   - CORS
   - Dotenv
   - Nodemon
+## Screenshot:
+![image](https://github.com/user-attachments/assets/5bbb39ee-cfbb-4185-99c5-fe038ec609ea)
 
 ## Backend Project Structure
 ```
